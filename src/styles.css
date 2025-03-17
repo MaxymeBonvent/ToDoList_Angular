@@ -1,0 +1,223 @@
+/* -------- PROPRIÉTÉS COMMUNES -------- */
+/* Corps de la page */
+body{
+    /* Fond et contour */
+    background-color: cornflowerblue;
+    border: 2px solid black;
+}
+
+/* Titres et sous-titres */
+h1, h2{
+    /* Centrage */
+    text-align: center;
+}
+
+/* Header et Footer */
+header, footer{
+    /* Fond et contour */
+    background-color: rgb(0, 100, 200);
+    border: 1px solid transparent;
+
+    /* Texte */
+    text-align: center;
+}
+
+/* Main */
+main{
+    /* Position des éléments internes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Div d'ajout/filtrage d'une tâche */
+#div_ajout_filtr_tache{
+   /* Fond et contour */
+   border: 2px solid black;
+   
+   /* Position des éléments internes */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* Boutons dans la div d'ajout/filtrage des tâches */
+#div_ajout_filtr_tache button{
+    /* Espace externe */
+    margin: 6px 0;
+}
+
+/* Boutons */
+button{
+    /* Souris */
+    cursor: pointer;
+
+    /* Contour */
+    border: 1px solid transparent;
+}
+
+/* Survol des boutons */
+button:hover{
+    /* Fond */
+    background-color: rgb(255, 100,  0);
+}
+
+/* Listes non-ordonnées */
+ul{
+   /* Fond et contour */
+   border: 2px solid black;
+
+   /* Suppression des puces */
+   list-style-type: none;
+
+   /* Espace interne */
+   padding: 0;
+}
+
+/* Éléments de liste */
+li{
+    /* Fond et contour */
+    border: 2px solid black;
+
+    /* Dimensions */
+    width: 90%;
+
+    /* Espace externe */
+    margin: 10px;
+
+    /* Position des éléments internes */
+    display: flex;
+}
+
+/* Divs contenant les boutons Modifier et Supprimer, et les boutons Annuler et Sauvegarder */
+.div_btn_tache{
+    /* Dimensions */
+    width: 50px;
+
+    /* Position des éléments internes */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Boutons pour ajouter, changer ou supprimer une tâche */
+.btn_tache{
+    /* Dimensions */
+    width: 20px;
+    height: 20px;
+}
+
+/* Cases à cocher */
+input[type="checkbox"]{
+    /* Souris */
+    cursor: pointer;
+}
+
+/* Champs de saisi des <li> */
+li input[type=text]{
+    /* Espace externe */
+    margin-bottom: 5px;
+}
+
+
+/* -------- RESPONSIVE -------- */
+
+/* VERSION TRÈS PETITE */
+@media all and (max-width: 344px)
+{
+    /* Div d'ajout/filtrage des tâche et Liste de tâches */
+    #div_ajout_filtr_tache, ul{
+        /* Dimensions */
+        width: 60%;
+    }
+
+    /* Labels */
+    label{
+        /* Taille du texte */
+        font-size: 18px;
+    }
+
+    /* Champ de saisie de la div ajout/filtrage et champs des <li> */
+    #div_ajout_filtr_tache input, li input[type=text]{
+        /* Taille du texte */
+        font-size: 16px;
+
+        /* Dimensions */
+        width: 80%;
+    }
+}
+
+/* VERSION PETITE */
+@media all and (min-width: 345px) and (max-width: 540px)
+{
+    /* Div d'ajout/filtrage des tâche et Liste de tâches */
+    #div_ajout_filtr_tache, ul{
+        /* Dimensions */
+        width: 60%;
+    }
+
+    /* Labels */
+    label{
+        /* Taille du texte */
+        font-size: 18px;
+    }
+
+    /* Champ de saisie de la div ajout/filtrage et champs des <li> */
+    #div_ajout_filtr_tache input, li input[type=text]{
+        /* Taille du texte */
+        font-size: 16px;
+
+        /* Dimensions */
+        width: 80%;
+    }
+}
+
+/* VERSION MOYENNE */
+@media all and (min-width: 541px) and (max-width: 912px)
+{
+    /* Div d'ajout/filtrage des tâche et Liste de tâches */
+    #div_ajout_filtr_tache, ul{
+        /* Dimensions */
+        width: 30%;
+    }
+
+    /* Labels */
+    label{
+        /* Taille du texte */
+        font-size: 20px;
+    }
+
+    /* Champ de saisie de la div ajout/filtrage et champs des <li> */
+    #div_ajout_filtr_tache input, li input[type=text]{
+        /* Taille du texte */
+        font-size: 18px;
+
+        /* Dimensions */
+        width: 80%;
+    }
+}
+
+/* VERSION GRANDE */
+@media all and (min-width: 913px)
+{
+    /* Div d'ajout/filtrage des tâche et Liste de tâches */
+    #div_ajout_filtr_tache, ul{
+        /* Dimensions */
+        width: 30%;
+    }
+
+    /* Labels */
+    label{
+        /* Taille du texte */
+        font-size: 20px;
+    }
+
+    /* Champ de saisie de la div ajout/filtrage et champs des <li> */
+    #div_ajout_filtr_tache input, li input[type=text]{
+        /* Taille du texte */
+        font-size: 18px;
+
+        /* Dimensions */
+        width: 80%;
+    }
+}

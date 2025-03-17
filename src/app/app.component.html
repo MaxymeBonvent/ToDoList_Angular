@@ -1,0 +1,84 @@
+<!-- PAGE PRINCIPALE -->
+
+<header>
+  <h1>Header</h1>
+</header>
+
+<main>
+
+  <h2>
+    <!-- Taille de la liste -->
+    {{items.length}}
+
+    <span> 
+
+      <!-- S'il n'y a qu'une seule tâche, écrire "tâche" -->
+      @if (items.length === 1) 
+        { tâche } 
+
+      <!-- S'il y a plusieurs tâches, écrire "tâches" -->
+      @else 
+        { tâches } 
+
+    </span>
+
+  </h2>
+
+  <!-- Div d'ajout d'une tâche ou de filtrage de la liste -->
+  <div id="div_ajout_filtr_tache">
+    <label for="addItemInput">Décrire la tâche à ajouter</label>
+
+    <!-- Champ de saisie de la tâche -->
+     <!-- #newItem is a template variable -->
+    <input #newItem placeholder="tâche" (keyup.enter)="addItem(newItem.value); 
+      newItem.value=''"
+      class="lg-text-input"
+      id="addItemInput"
+      maxlength="30"/>
+    
+    <button class="btn_tache" title="Ajouter cette tâche" (click)="addItem(newItem.value)">+</button>
+    
+    <!-- Bouton d'affichage de la liste entière -->
+    <button
+      title="Afficher toutes les tâches"
+      [class.active]="filter == 'all'"
+      (click)="filter = 'all'">
+      Toutes
+    </button>
+
+    <!-- Bouton d'affichage des tâches incomplètes -->
+    <button
+      title="Afficher les tâches incomplètes"
+      [class.active]="filter == 'active'"
+      (click)="filter = 'active'">
+      À faire
+    </button>
+
+    <!-- Bouton d'affichage des tâches complètes -->
+    <button
+      title="Afficher les tâches complètes"
+      [class.active]="filter == 'done'"
+      (click)="filter = 'done'">
+      Finis
+    </button>
+
+  </div>
+  
+  <!-- Liste de tâches -->
+  <ul>
+
+    @for (item of items; track item.description) 
+    {
+      <!-- Tâche, [item] est une propriété -->
+      <li>
+        <app-item class="tache" (remove)="remove(item)" [item]="item"></app-item>
+      </li>
+    }
+
+  </ul>
+
+</main>
+
+<footer>
+  <h2>Footer</h2>
+</footer>

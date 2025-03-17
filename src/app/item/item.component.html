@@ -1,0 +1,38 @@
+<div class="item">
+
+    <!-- Case à cocher -->
+    <input 
+      title="Déclarer cette tâche (in)complète"
+      [id]="item.description" type="checkbox"
+      (change)="item.done = !item.done" [checked]="item.done"/>
+
+    <label [for]="item.description">{{item.description}}</label>
+  
+    <!-- Boutons affichés avant que le bouton Modifier ne soit cliqué -->
+    @if (!editable) {
+    <div class="div_btn_tache">
+      <button class="btn_tache" title="Changer la description de cette tâche" (click)="editable = !editable">&#9998;</button>
+      <button class="btn_tache" title="Supprimer cette tâche" (click)="remove.emit()">X</button>
+    </div>
+    }
+  
+    <!-- Boutons affichés après que le bouton Modifier soit cliqué -->
+    @if (editable) {
+    <div>
+      <!-- Champ de saisie -->
+      <input type="text"
+        class="sm-text-input"
+        placeholder="modifier"
+        [value]="item.description"
+        #editedItem
+        (keyup.enter)="saveItem(editedItem.value)"/>
+  
+      <!-- Div des boutons Annuler et Sauvegarder -->
+      <div class="div_btn_tache">
+        <button class="btn_tache" title="Annuler la modification" (click)="editable = !editable">&#8634;</button>
+        <button class="btn_tache" title="Sauvegarder cette description" (click)="saveItem(editedItem.value)">&#9745;</button>
+      </div>
+
+    </div>
+    }
+  </div>  
